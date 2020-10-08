@@ -1,0 +1,15 @@
+# Dependency directories
+node_modules/
+
+# next.js build output
+.next
+
+# typescript build output
+dist
+
+
+__generated__
+yarn.lock
+.env
+readme.txt
+# exported static file

@@ -1,0 +1,46 @@
+{
+    "key": "group_5f6da8e53a34d",
+    "title": "arab admin",
+    "fields": [
+        {
+            "key": "field_5f6da94ccc890",
+            "label": "arab tittle",
+            "name": "arab_tittle",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "show_in_graphql": 1,
+            "default_value": "ادمن",
+            "placeholder": "الاسم",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "team"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_graphql": 1,
+    "graphql_field_name": "arabic-admin",
+    "modified": 1601024388
+}
