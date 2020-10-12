@@ -41,7 +41,5 @@ function add_event_caps() {
   $role->add_cap( 'read_event' ); 
   $role->add_cap( 'read_private_events' ); 
   $role->add_cap( 'delete_event' ); 
-  $role->add_cap( 'edit_published_events' );   //added
-  $role->add_cap( 'delete_published_events' ); //added
 }
 add_action( 'admin_init', 'add_event_caps');

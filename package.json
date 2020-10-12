@@ -9,13 +9,13 @@
 		"Theme",
 		"Bahra"
 	],
-	"homepage": "https://github.com/wordpress/bahra#readme",
+	"homepage": "https://github.com/BahraEu/bahra-wp",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/wordpress/bahra.git"
+		"url": "https://github.com/BahraEu/bahra-wp"
 	},
 	"bugs": {
-		"url": "https://github.com/wordpress/bahra/issues"
+		"url": "https://github.com/BahraEu/bahra-wp/issues"
 	},
 	"devDependencies": {
 		"@wordpress/browserslist-config": "^2.6.0",

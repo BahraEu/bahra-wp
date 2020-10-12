@@ -12,7 +12,7 @@
  * @since bahra
  */
 ?>
-<main id="site-content" role="main">
+<main id="site-content" >
 
 	<?php
   $args = array(  
@@ -21,22 +21,37 @@
     'posts_per_page' => -1, 
     'orderby' => 'title', 
     'order' => 'ASC',
-    'cat' => 'home',
 );
 
-$loop = new WP_Query( $args ); 
     
-while ( $loop->have_posts() ) : $loop->the_post(); 
-    $featured_img = wp_get_attachment_image_src( $post->ID );
-    print the_title();
-    the_excerpt(); 
+$loop = new WP_Query( $args );
+
+$ourCurrentUser = wp_get_current_user();
+
+if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0]
+ == 'artist'||'adminstrator'||'admin') {
+  // var_dump($ourCurrentUser);
+
+while ( $loop->have_posts() ) : $loop->the_post();
+get_template_part( 'template-parts/content-artist', get_post_type('artists') );
+the_title();
+echo '<div class="entry-content">';
+the_content();
+echo '</div>';
 endwhile;
 
-wp_reset_postdata(); 
+$fields = get_field("group_5e4d47ec4ded8");
+   var_dump($fields);
 
 
-		
-   ?>
+  exit;
+}else{wp_redirect( 'https://bahra.eu');
+exit;
+}
+
+
+
+?>
 </main >
 
 

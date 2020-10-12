@@ -15,7 +15,7 @@ require_once 'inc/src/ImageSupport.php';
 require_once 'inc/src/frontend-origin.php';
 
 // ACF commands.
-require_once 'inc/src/class-acf-commands.php';
+require_once 'classes/class-acf-commands.php';
 
 // Logging functions.
 require_once 'inc/src/log.php';
@@ -385,6 +385,14 @@ require get_template_directory() . '/classes/class-bahra-non-latin-languages.php
 require get_template_directory() . '/inc/custom-css.php';
 
 /**
+ * logout
+ */
+add_action( 'wp_logout','wpdocs_ahir_redirect_after_logout' );
+function wpdocs_ahir_redirect_after_logout() {
+    wp_safe_redirect( home_url('/login') );
+    exit();
+}
+/**
  * Register and Enqueue Styles.
  */
 function bahra_register_styles() {
@@ -445,7 +453,7 @@ add_action( 'wp_print_footer_scripts', 'bahra_skip_link_focus_fix' );
  *
  * @since Bahra
  *
-
+ */
 function bahra_non_latin_languages() {
 	$custom_css = Bahra_Non_Latin_Languages::get_non_latin_css( 'front-end' );
 
@@ -455,7 +463,7 @@ function bahra_non_latin_languages() {
 }
 
 add_action( 'wp_enqueue_scripts', 'bahra_non_latin_languages' );
- */
+
 
 /**
  * Register navigation menus uses wp_nav_menu in five places.
@@ -658,7 +666,7 @@ add_filter( 'tiny_mce_before_init', 'bahra_add_classic_editor_customizer_styles'
  *
  * @param array $mce_init TinyMCE styles.
  * @return array TinyMCE styles.
- *//**
+ */
 function bahra_add_classic_editor_non_latin_styles( $mce_init ) {
 
 	$styles = bahra_Non_Latin_Languages::get_non_latin_css( 'classic-editor' );
@@ -680,7 +688,7 @@ function bahra_add_classic_editor_non_latin_styles( $mce_init ) {
 
 add_filter( 'tiny_mce_before_init', 'bahra_add_classic_editor_non_latin_styles' );
 
-
+/*
  * Block Editor Settings.
  * Add custom colors and font sizes to the block editor.
  */

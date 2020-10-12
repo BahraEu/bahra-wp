@@ -1,14 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
 <?php
 /**
  * Header file for the Bahra  WordPress default theme.
@@ -16,7 +5,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package WordPress
- * @subpackage Bahta
+ * @subpackage BAHRA
  * @since Bahra 1.0
  */
 
